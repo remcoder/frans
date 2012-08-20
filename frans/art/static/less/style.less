@@ -1,0 +1,234 @@
+
+  @light: #c8c8c8;
+  @medium: #666;
+  @dark: #333;
+  @highlight: red;
+  
+  @width_main: 600px;
+  @width_gap: 40px;
+  @width_aside: 200px;
+  
+  @height_main: 440px;
+  @height_nav: 40px;
+  @height_footer: 40px; /* only rectangular space. not the triangle  */
+  
+  // .column2 { width: @width; position: relative;}
+  // .column2 .column { position: absolute; height: 100%; }
+  // .right  { width: @width / 3; right: 0; top:0;}
+  // .left { width: 2* @width / 3; left:0; top:0; }
+  
+  html, body { 
+    height: 100%; 
+    font-family: 'Helvetica', sans-serif;  
+    font-size: 13px;
+    color: @dark; 
+    background-color:@medium; }
+  
+  body {
+    background: url('/static/images/achtergrond.jpg');
+    margin:0;
+    padding:0;
+  }
+  
+  nav.menu a
+  {
+    text-decoration: none;
+  }
+
+  .page-wrapper
+  {
+    position: absolute;
+    
+    /* center vertically */
+    top: 50%;
+    left: 50%;
+    
+    
+    margin-left: -420px;
+    margin-top: -290px; /* half height */
+    width: @width_main + @width_gap + @width_aside;
+    xborder: 1px solid red;
+  }
+    
+  section.main {
+    position:absolute;
+    left: 0;
+    background-color: @light;
+    width: 600px;
+    height: @height_main + @height_nav + @height_footer;
+  }
+  
+footer {
+  position: absolute;
+  bottom: @height_footer + -100px;
+  border-color: #C8C8C8 green blue transparent;
+  border-style: solid;
+  border-width: 60px 0px 0px 600px;
+  width: 0;
+  height: 0;
+}
+  
+
+#gallery {
+  -webkit-transform: translateZ(0); /* trying to make fading smoother/less cpu-intensive */
+    position: relative;
+  width: 500px;
+  height: 360px;
+
+  margin: 50px;
+  xbackground-color: green;
+       
+  
+  img {
+    position: absolute;
+    
+  }
+}
+
+  
+  
+  aside {
+    position:absolute;
+    left: @width_main + @width_gap;
+    width: @width_aside;
+
+    background-color: white;
+    color: grey;
+    height: @height_main + @height_nav + @height_footer + 60px;
+    xheight: 400px;
+    
+    .aside-wrapper {
+      position: relative;
+      padding:30px;
+      padding-top:25px;
+      height: 400px;
+    }
+  }
+
+  .personalia { 
+    ul, .address
+    {
+      xpadding: 30px;
+      margin: 0;
+    }
+    
+    ul { 
+      list-style: none; 
+      margin-top: -7px;
+      padding: 0;
+    }
+  }
+  
+  aside h2
+  {
+    font-size: 15px;
+    font-weight: bold;
+    margin:0;
+    color: red;
+    margin-bottom: 20px;
+  }
+  
+  aside .art-info 
+  {
+    font-size: 90%;
+    ul {
+      padding: 0;
+    }
+  }
+  
+  .address
+  {
+    position:absolute;
+    bottom:0;
+    padding: 26px;
+    padding-bottom: 14px;
+    margin: 0;
+    font-size: 9px;
+    line-height: 150%;
+    font-weight: bold;
+    a {
+      color: red;
+      text-decoration: none;
+    }
+  }
+
+
+
+
+
+  xnav :first-child { margin-left: 30px;}
+  
+  nav.menu {
+    z-index:1;
+    position: absolute;
+    top: @height_main + 20px;
+    width: 106%;
+    margin-left: -3%;
+    background-color: #000;
+    
+    .left {
+      display:inline-block;
+      width: 655px;
+      xbackground-color: green;
+      text-align: center;
+    }
+    
+    a { 
+      color: @light;
+      display: inline-block;
+      height: 40px; 
+      width: 117px;
+      line-height: 40px; 
+      text-align: center;
+    }
+    
+    a.home {
+      position: absolute;
+      right: 0;
+      width: 249px;
+      
+    }
+    
+    a:hover { color: @highlight; }
+    
+    ul { margin: 0; padding: 0; height: 100%; padding-top: 15px;}
+  }
+  
+  nav.home { 
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    top: 440px;
+    background-color: white;
+    text-align: center;
+    a { color: @dark; }
+    a:hover { color: @highlight; }
+  }
+  
+  #gallery-controls {
+    position: absolute;
+    bottom:0;
+    left:25px;
+    
+       
+    height: 39px;
+    
+    button {
+      margin-right: 10px;
+    }
+    
+    .play {
+      
+      background-image: url('/static/images/playback_play grijs.png');
+      background-position: 5px;
+    }
+    .pause {
+      background-image: url('/static/images/playback_pause_rood.png');
+    }
+    .next {
+      background-image: url('/static/images/playback_next grijs.png');
+    }
+    .prev {
+      background-image: url('/static/images/playback_prev grijs.png');
+    }
+  }

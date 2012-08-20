@@ -1,0 +1,38 @@
+aside ul {
+    padding: 0;
+  }
+  
+  #column-wrapper {
+    margin: 30px;
+    xoverflow-y: scroll;
+    height: 400px;
+  }
+  
+  article {
+    padding: 50px 40px;
+  }
+  
+  #scroll-controls {
+    position: absolute;
+    bottom: 30px;
+    margin-bottom: -18px;
+    margin-left: -10px;
+    
+    button {
+      display: block;
+    }
+    
+   .up {
+      background-image: url(scroll_omhoog.png);
+      &:hover {
+        background-image: url(scroll_omhoog_rood.png);
+      }
+    }
+    .down {
+      background-image: url(scroll_omlaag.png);
+      &:hover {
+        background-image: url(scroll_omlaag_rood.png);
+      }
+    }
+    
+  }

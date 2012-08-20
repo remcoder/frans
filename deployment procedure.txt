@@ -1,0 +1,4 @@
+deployment procedure 
+--------------------
+turn off Django's Debug mode
+regenerate secret
