@@ -1,44 +1,42 @@
 
+{% extends "base.html" %}
 
-<head>
-  <meta http-equiv="X-UA-Compatible" content="ie=9,chrome=1">
-  <link href="http://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/static/css/base.css">
-  <link rel="stylesheet" href="/static/css/utilities.css">
-  <link rel="stylesheet" href="/static/css/style.css">
-  <link rel="stylesheet" href="/static/css/columns.css">
-</head>
-<div class="page-wrapper"><section class="main"><div id="gallery"></div><footer></footer></section><nav class="menu"><div class="left"><a href="/kunst">kunst</a><a href="/columns">columns</a><a href="/artiest">artiest</a><a href="/nieuws">nieuws</a><a href="/links">links</a></div><a class="home" href="/">home</a></nav><aside><div class="aside-wrapper">
-      <h2>Frans de Leef</h2>
-      <h3>
-    Kunst
-  </h3>
-      <div class="art-info">
-        <ul>
-          <li>"<span class="title"></span>"</li>
-          <li></li>
-          <li><span class="technique"></span></li>
-          <li><span class="dimensions"></span></li>
-        </ul>
-      </div>
-      <div id="gallery-controls" data-role="gallery-controls"><button class="prev" data-role="prev"></button><button class="pause" data-role="pause" style="font-weight: bold;"></button><button class="play hidden" data-role="play"></button><button class="next" data-role="next"></button></div>
-    </div><nav class="address">
-  Hendrik van Deventerstraat 1 bis<br>
-  2563 XP Den Haag<br>
-  070 3645633 / 06 12353247<br><a href="mailto:deleef@hetnet.nl">deleef@hetnet.nl</a></nav></aside></div>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-  <!-- <script src="/static/iscroll.js"></script> -->
-  <script src="/static/gallery.js"></script>
-  <script>
-    var artObjects = {{ artObjects|safe }}.map(function(ao) {
-        return ao.fields;
+{% block title %} Kunst {% endblock %}
+
+{% block content %}
+  <div id="gallery"></div>
+{% endblock %}
+
+{% block content-aside %}
+  <h3>Kunst</h3>
+  <div class="art-info">
+    <ul>
+      <li>"<span class="title"></span>"</li>
+      <li></li>
+      <li><span class="technique"></span></li>
+      <li><span class="dimensions"></span></li>
+    </ul>
+  </div>
+  <div id="gallery-controls" data-role="gallery-controls">
+    <button class="prev" data-role="prev"></button>
+    <button class="pause" data-role="pause"></button>
+    <button class="play hidden" data-role="play"></button>
+    <button class="next" data-role="next"></button>
+  </div>
+{% endblock %}
+
+{% block script-at-foot %}
+<script>
+  var artObjects = {{ artObjects|safe }}.map(function(ao) {
+      return ao.fields;
+  });
+  $(function() { 
+    $("#gallery").gallery({
+      width: 500,
+      height: 360,
+      metaElement : ".art-info",
+      metadata  : artObjects
     });
-    $(function() { 
-      $("#gallery").gallery({
-        width: 500,
-        height: 360,
-        metaElement : ".art-info",
-        metadata  : artObjects
-      });
-    });
-  </script>
+  });
+</script>
+{% endblock %}

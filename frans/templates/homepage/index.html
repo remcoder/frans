@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div id="gallery"></div>
+{% endblock %}
+
+{% block content-aside %}
+  <div class="personalia">
+    <ul>
+      <li>koekenbakker</li>
+      <li>bakt sinds 1949 zijn koeken meestal in 's-Gravenhage</li>
+    </ul>
+  </div>
+{% endblock %}
+
+{% block script-at-foot %}
+<script>
+  $(function() {
+    var images = {{ images|safe }}.map(function(img) {
+      return img.fields;
+    });
+    $("#gallery").gallery({
+      width: 500,
+      height: 360,
+      metadata : images
+    });
+  });
+</script>
+{% endblock %}
