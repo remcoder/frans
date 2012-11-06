@@ -1,11 +1,9 @@
 
 etc
-- use decorators to register routes (http://djangosnippets.org/snippets/1671/)
 - i18n admin
 - add fallback to local jquery
 
 columns
-- FIX: slug is auto-generated so it shouldn't be entered in the admin form
 - FIX: handle exception when column with duplicate slug is added
 
 live

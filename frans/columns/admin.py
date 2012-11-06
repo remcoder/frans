@@ -6,5 +6,6 @@ from django.contrib import admin
 class ColumnAdmin(admin.ModelAdmin):
   list_display = 'title', 'slug'
   search_fields = ['title']
+  exclude = 'slug',
 
 admin.site.register(Column, ColumnAdmin)
