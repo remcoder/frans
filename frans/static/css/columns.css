@@ -1,1 +1,45 @@
-aside ul{padding:0}#column-wrapper{margin:30px;xoverflow-y:scroll;height:400px}article{padding:50px 40px}#scroll-controls{position:absolute;bottom:30px;margin-bottom:-18px;margin-left:-10px}#scroll-controls button{display:block}#scroll-controls .up{background-image:url(scroll_omhoog.png)}#scroll-controls .up:hover{background-image:url(scroll_omhoog_rood.png)}#scroll-controls .down{background-image:url(scroll_omlaag.png)}#scroll-controls .down:hover{background-image:url(scroll_omlaag_rood.png)}
+aside ul {
+    padding: 0
+}
+
+#column-wrapper {
+    margin: 30px;
+    xoverflow-y: scroll;
+    height: 400px
+}
+
+article {
+    padding: 50px 40px
+}
+
+.link-to-column {
+  text-decoration: none;
+  color: inherit;
+}
+
+#scroll-controls {
+    position: absolute;
+    bottom: 30px;
+    margin-bottom: -18px;
+    margin-left: -10px
+}
+
+#scroll-controls button {
+    display: block
+}
+
+#scroll-controls .up {
+    background-image: url(../images/scroll_omhoog.png)
+}
+
+#scroll-controls .up:hover {
+    background-image: url(../images/scroll_omhoog_rood.png)
+}
+
+#scroll-controls .down {
+    background-image: url(../images/scroll_omlaag.png)
+}
+
+#scroll-controls .down:hover {
+    background-image: url(../images/scroll_omlaag_rood.png)
+}

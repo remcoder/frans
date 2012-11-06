@@ -14,6 +14,8 @@ urlpatterns = patterns('',
 
     url(r'^$', 'homepage.views.index'),
     url(r'^kunst/$', 'art.views.index'),
+    url(r'^columns/$', 'columns.views.index'),
+    url(r'^columns/(?P<slug>.+)/$', 'columns.views.by_slug'),
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),

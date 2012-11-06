@@ -1,1 +1,24 @@
-a{color:#333}a:hover{color:red}ul{list-style:none}button{width:32px;height:32px;border:0;background-color:transparent;background-size:100%;background-repeat:no-repeat}article{background-color:#fff}
+a {
+    color: #333
+}
+
+a:hover {
+    color: red
+}
+
+ul {
+    list-style: none
+}
+
+button {
+    width: 32px;
+    height: 32px;
+    border: 0;
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat
+}
+
+article {
+    background-color: #fff
+}

@@ -1,0 +1,63 @@
+
+{% extends "base.html" %}
+
+{% block title %} Kunst {% endblock %}
+
+{% block content %}
+  <div id="column-wrapper">
+    <article >
+      <b>{{ column.title }}</b>
+
+      {{ column.body|linebreaks }}
+    </article>
+</div>
+{% endblock %}
+
+{% block content-aside %}
+  <h3>Columns</h3>
+  <div class="column-info">
+    <ul>
+      {% for c in all_columns %}
+        <li><a href="/columns/{{ c.slug }}" class="link-to-column">{{ c.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+ <div id="scroll-controls" data-role="scroll-controls">
+  <button class="up" data-role="scroll-up"></button>
+  <button class="down" data-role="scroll-down"></button>
+ </div>
+{% endblock %}
+
+{% block script-at-foot %}
+<script>
+  $(function() { 
+    var  myScroll = new iScroll('column-wrapper', { 
+      hScrollbar: false, 
+      vScrollbar: false
+    });
+    
+    var $scrollControls = $("[data-role ~= 'scroll-controls']"),
+      $scrollUp = $scrollControls.find("[data-role ~= 'scroll-up']"),
+      $scrollDown = $scrollControls.find("[data-role ~= 'scroll-down']");
+    
+    var scrollDelta = 100,
+      scrollTime = 500;
+    
+    $scrollUp.click(function() {
+      var y = myScroll.y - scrollDelta ;
+      y = Math.max(y, myScroll.minScrollY);
+      myScroll.scrollTo(0, y, scrollTime);
+    });
+    
+    $scrollDown.click(function() {
+      var y = myScroll.y + scrollDelta ;
+      y = Math.min(y, myScroll.maxScrollY);
+      myScroll.scrollTo(0, y, scrollTime);
+    });
+    
+    $("article").fadeIn("fast", function() { myScroll.refresh(); });
+  
+  });
+</script>
+{% endblock %}

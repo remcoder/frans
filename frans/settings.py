@@ -108,6 +108,7 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     "/Users/remcoder/projects/frans/frans/art/templates",
+    "/Users/remcoder/projects/frans/frans/columns/templates",
     "/Users/remcoder/projects/frans/frans/templates"
 )
 
@@ -120,7 +121,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     "django.contrib.admin",
     'art',
-    'homepage'
+    'columns',
+    'homepage',
+    'south'
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
