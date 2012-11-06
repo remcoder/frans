@@ -3,9 +3,6 @@ etc
 - i18n admin
 - add fallback to local jquery
 
-columns
-- FIX: handle exception when column with duplicate slug is added
-
 live
 - 404 page
 - google analytics / webmaster tools
